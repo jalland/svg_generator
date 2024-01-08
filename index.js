@@ -1,6 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Shape, Circle, Square, Triangle } = require('./lib//shapes.js');
+const { Shape, Circle, Square, Triangle } = require('./lib/shapes.js');
 
 // TODO: Create a function to initialize app
 function init() {
@@ -15,7 +15,7 @@ function init() {
           {
             type: 'input',
             name: 'shapeColor',
-            message: "Please enter a valid shape color:",
+            message: "Please enter a valid shape color (a color keyword or a hexadecimal number):",
           },
           {
             type: 'input',
@@ -25,11 +25,14 @@ function init() {
           {
             type: 'input',
             name: 'charactersColor',
-            message: "What color do you want the characters to be?",
+            message: "What color do you want the characters to be (a color keyword or a hexadecimal number)?",
           },
       ])
       .then((response) => {
-        console.log(response);
+        if(response.characters.length>3){
+            console.log("Redo! Please only enter three characters!")
+            return
+        }
 
         if(response.shapeName=='Circle'){
 
@@ -43,6 +46,8 @@ function init() {
             <text x="150" y="125" font-size="60" text-anchor="middle" fill="${response.charactersColor}">${response.characters}</text>
         
             </svg>`
+            console.log("Generated")
+
         }
         else if(response.shapeName=='Square') {
             const newShape = new Square()
@@ -73,8 +78,9 @@ function init() {
 
         }
         
-        fs.writeFile('logo.svg', text, (err) =>
-          err ? console.error(err) : console.log('Success!')
+        fs.writeFile('./examples/logo.svg', text, (err) =>
+          err ? console.error(err) : console.log('Generated logo.svg')
+
         );
 
       });
