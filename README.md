@@ -8,7 +8,7 @@ This application takes in user input to create a svg image that has (1) a shape 
 https://github.com/jalland/svg_generator 
 
 ## Example svg image
-Look in ./examples.logo.svg
+Look in ./examples/logo.svg
 
 ## Video Recording
 The screen recording of this application's functionality is here:
