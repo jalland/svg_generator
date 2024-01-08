@@ -4,13 +4,16 @@
 
 This application takes in user input to create a svg image that has (1) a shape with a specific color and (2) text overlaid on the shape with a specific color. The output svg file is saved in the ./examples directory and can be viewed on a browser. 
 
-## Deployed Application
-INSERT LINK
+## Git code
+https://github.com/jalland/svg_generator 
 
-## Screen Recording
+## Example svg image
+file:///Users/jalland/bootcamp/Week10/OOP_Challenge/svg_generator/examples/logo.svg
+
+## Video Recording
 The screen recording of this application's functionality is here:
 
-INSERT LINK
+https://drive.google.com/file/d/1YyzS7X0Qt6pEPMAWZlsAdg7H95uq95BG/view
 
 
 
